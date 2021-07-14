@@ -20,7 +20,7 @@ function getArticle($url,$file){ // текст статьи, например 1
         }
         $text_item_article = ''; // текст  подстатьи, например 1.4
         $text_article = $item->innertext;
-        $text_article = str_replace('<hr>', '', $text_article);
+        $text_article = str_replace(['<hr>','<p>','</p>','<ul>','</ul>','<li>','</li>'], '', $text_article);
         $array_articles = explode("<span>", $text_article);
         foreach ($array_articles as $item_article) {
 
